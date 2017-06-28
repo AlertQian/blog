@@ -1,0 +1,10 @@
+/*errorDialog*/
+/*errorDialog*/
+.mobileSina_err{
+    position:fixed;top:45%;_position:absolute;_top: expression(eval(document.documentElement.scrollTop || document.body.scrollTop)+380);
+    width:12em;z-index:2147483647; width:255px;padding-top: .875rem; background-color:#000;text-align: center;word-break:break-word;word-wrap:break-all;border-radius: .4em; opacity:0.7;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";display:none}
+.err_info{color:#fff; margin:15px; font-size:14px; _width:180px; text-align:center;}
+.mobileSina_err .ico_cir{width: 1.875em;height: 1.875em;margin: 0 auto .375rem;border-radius: 1.875em;border: 0.12rem solid #ffffff;}
+.mobileSina_err .ico_cir .ico_alert{display: inline-block;width: .28125em;height: .9375em;margin-top: .21875rem;background: #ffffff;border-radius: .125em .125em .15625em .15625em;}
+.mobileSina_err .ico_cir .ico_point{display: block;margin: .1rem auto 0;width: .28125em;height: .28125em;border-radius: .28125em;background: #ffffff;}
+.mobileSina_err .err_info{line-height: 1.3em;padding: 0 .55rem .61875rem;}
