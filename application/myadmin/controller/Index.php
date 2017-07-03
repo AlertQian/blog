@@ -1,13 +1,25 @@
 <?php
 namespace app\myadmin\controller;
+use think\Session;
+use think\Cookie;
 use think\Controller;
-class Index extends Controller
+use think\Request;
+
+use app\myadmin\model\Info;
+use app\myadmin\model\Admin;
+
+class Index extends Basic
 {
     public function index()
-    {
-        return $this->fetch();
-    }
-    public function login(){
+    {    
     	
+        echo "后台";
     }
+
+     public function system()
+    {    
+    	
+        echo "系统";
+    }
+    
 }
