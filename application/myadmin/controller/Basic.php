@@ -28,7 +28,7 @@ class Basic extends Controller
 	        }
         }
         $username=session('username');
-        if(!$username){          
+        if($username !== 'admin'){          
             return $this->redirect(url('login/index'));
         }
     }

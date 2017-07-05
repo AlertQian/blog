@@ -1,0 +1,47 @@
+{extend name="layout/base" /}
+
+{block name="body"} 
+{include file="index/header" /}     
+<div class="main">
+    <div class="nav-menu">
+        <div class="panel-inverse">
+            <div>
+                <div class="panel-heading" data-toggle="collapse" data-target="#webset" style="background: #2B2E37">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-globe pad-right"></span>网站管理<span class="caret"></span></h4>
+                </div>
+                <div id="webset" class="panel-collapse collapse in">
+                    <div class="group-list">
+                        <a href="{:url('webset/administartor')}" class="list-item" target="right"><span class="glyphicon glyphicon-user pad-right"></span>管理员　</a>
+                        <a href="#" class="list-item"><span class="glyphicon glyphicon-info-sign pad-right"></span>系统信息</a>
+                        <a href="#" class="list-item"><span class="glyphicon glyphicon-list-alt pad-right"></span>日志记录</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="panel-inverse">
+            <div>
+                <div class="panel-heading" data-toggle="collapse" data-target="#article" style="background: #2B2E37">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-folder-open pad-right"></span>文章管理<span class="caret"></span></h4>
+                </div>
+                <div id="article" class="panel-collapse collapse in">
+                    <div class="group-list">
+                        <a href="#" class="list-item"><span class="glyphicon glyphicon-file pad-right"></span>所有文章</a>
+                        <a href="#" class="list-item"><span class="glyphicon glyphicon-pencil pad-right"></span>添加文章</a>
+                        <a href="#" class="list-item"><span class="glyphicon glyphicon-tags pad-right"></span>分类目录</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="panel-inverse">
+            <div class="panel-heading panel-foot" data-toggle="collapse" style="background: #2B2E37">
+                <span class="glyphicon glyphicon-tasks"></span>
+            </div>
+        </div>
+        <div class="adminmenuback"></div>
+    </div>
+    <div class="wrap">
+        <iframe id="rightag" name="right" src="" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <div class="clearfix"></div>
+</div>
+{/block}

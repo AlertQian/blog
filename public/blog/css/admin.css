@@ -1,0 +1,21 @@
+.wrapper{width: 100%;}
+.navbar-header{background: #393D49;color: #fff;width: 100%;margin-bottom: 0px;line-height: 60px;border-bottom: 4px solid #1AA095} 
+.navbar-log{width: 160px;border-right: 2px solid #fff;line-height: 60px;text-align: center;float: left;}
+.navbar-log a,.web-home a{text-decoration: none;}
+/*个人中心*/
+.user{float: right;}
+.web-home{float: right;padding: 0px 20px;border-left: 2px solid #e5e5e5;}
+.user-menu{background: #393D49;padding: 0px 20px;border-left: 1px solid #545353;cursor: pointer;width: 160px;}
+.user-menu img{margin-right: 10px;}
+/*菜单导航栏*/
+.nav-menu{width: 160px;background: #393D49;border-right: 2px solid #fff;float: left;}
+.panel{border-radius: 0px;}
+.list-item {position: relative; display: block;padding: 10px 15px;color: #fff;}
+.list-item:hover{background: #1AA095;text-decoration: none;color: #fff;}
+.list-item.active{background: #1AA095;text-decoration: none;color: #fff;}
+.panel-inverse{text-align: center;color: #fff;cursor: pointer;}
+.pad-right{padding-right: 10px;}
+.adminmenuback {position: fixed;top: 0;bottom: -120px;z-index: -1;background: #393D49;width: 158px;}
+.panel-foot{position: absolute;bottom: 0;width: 158px;}
+/*wrap*/
+.wrap{float: left;padding: 20px;position: fixed;left: 160px;right: 0;bottom: 0;top: 60px;}
