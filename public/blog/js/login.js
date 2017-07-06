@@ -6,7 +6,8 @@ $(function(){
 		e.preventDefault();
 		var name=$("#name").val().trim(),
 		    pwd=$("#pwd").val().trim(),
-            check=$('input[type=checkbox]:checked').val();
+            check=$('input[type=checkbox]:checked').val(),
+            $this=$(this);
         if (name.length == 0) {
         	$.tip('请填写您的大名！');
         	return false;
@@ -19,15 +20,17 @@ $(function(){
         	url:"/myadmin/login/loginsave",
         	type:"post",
         	data:{'name':name,'pwd':pwd,'check':check},
+            beforeSend:function(){$this.text('登录中...')},
         	success:function(data){
         		if(data.code==1){
-        			$.tip(data.msg);
         			setTimeout(function(){
+                        $this.text('登录成功');
         				location.href="/myadmin/index/index";
         			},1500)
         			
         		}else{
         			$.tip(data.msg);
+                    $this.text('登录');
         		}
         	},
         	error:function(){
