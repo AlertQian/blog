@@ -9,7 +9,6 @@
 .user-menu img{margin-right: 10px;}
 /*菜单导航栏*/
 .nav-menu{width: 160px;background: #393D49;border-right: 2px solid #fff;float: left;}
-.panel{border-radius: 0px;}
 .list-item {position: relative; display: block;padding: 10px 15px;color: #fff;}
 .list-item:hover{background: #1AA095;text-decoration: none;color: #fff;}
 .list-item.active{background: #1AA095;text-decoration: none;color: #fff;}
@@ -19,3 +18,4 @@
 .panel-foot{position: absolute;bottom: 0;width: 158px;}
 /*wrap*/
 .wrap{float: left;padding: 20px;position: fixed;left: 160px;right: 0;bottom: 0;top: 60px;}
+.font-12{font-size: 12px;}

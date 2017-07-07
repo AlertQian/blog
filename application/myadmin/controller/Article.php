@@ -7,7 +7,8 @@ class Article extends Basic
 {   
 	  //所有文章
     public function artall()
-    {    	
+    {   
+        	
        return $this->fetch();
     }
     //添加文章

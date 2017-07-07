@@ -20,13 +20,14 @@ class Webset extends Basic
     	$uname=session('username');
     	$data=input('post.');
     	$newname=strip_tags($data['newname']);
-    	$newpwd=md5(strip_tags($data['newpwd']));
+    	$pwd=strip_tags($data['newpwd']);
+    	$newpwd=md5($pwd);
     	$oldpwd=md5($data['oldpwd']);
 
     	if(mb_strlen($newname,'utf-8') > 10){
     		exit('name_toolong');
     	};
-    	if(mb_strlen($newpwd,'utf-8') < 6){
+    	if(mb_strlen($pwd,'utf-8') < 6){
     		exit('pwd_wrong');
     	};
     	$ret=$admin::where(['uname'=>$uname,'pwd'=>$oldpwd])->find();
@@ -50,8 +51,34 @@ class Webset extends Basic
     }
     //系统信息
     public function systeminfo()
-    {    	
+    {  
+       $info=new Info;
+       $ret=$info::where('id',1)->find();
+       $this->assign('ret',$ret);
        return $this->fetch();
+    }
+    //系统信息更新
+    public function upinfo()
+    {    	
+       $info=new Info;
+       $data=input('post.');
+       $title=strip_tags($data['title']);
+       $signature=strip_tags($data['signature']);
+       $web_info=strip_tags($data['webinfo']);
+
+       $updata=[
+            'title'     =>$title,
+            'signature' =>$signature,
+            'web_info'  =>$web_info,
+            'addtime'   =>time()
+       ];
+
+       $ret=$info->save($updata,['id'=>1]);
+       if($ret){
+       	    $this->success('更新成功');   
+       }else{
+       	    $this->error('更新失败');
+       }
     }
     //日志记录
     public function loglist()

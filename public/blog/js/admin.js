@@ -4,26 +4,13 @@ $(function(){
 		$('.group-list a:not(this)').removeClass('active');
 		$(this).addClass('active');
 	})
-	//检验原始密码是否正确
-	/*$("#oldpwd").on('blur',function(){
-		var oldpwd=$("#oldpwd").val().trim();
-		if(oldpwd.length == 0){
-    		$.tip("请输入原始密码");
-    		return false;
-    	} 
-    	$.ajax({
-    		url:"",
-    	})
-
-	})*/
     //修改管理员信息
     $("#upadmin").on('click',function(e){
     	e.preventDefault();
     	var newname=$("#newname").val().trim(),
 			oldpwd=$("#oldpwd").val().trim(),
     	    newpwd=$("#newpwd").val().trim(),
-    	    againpwd=$("#againpwd").val().trim(),
-    	    $this=$(this);
+    	    againpwd=$("#againpwd").val().trim();
     	if(newname.length == 0){
     		$.tip("请输入新用户名");
     		return false;
@@ -52,7 +39,7 @@ $(function(){
     		beforeSend:function(){
     			$(".fakeloader").fakeLoader({
                     timeToHide:1200,
-                    bgColor:"#e74c3c",
+                    bgColor:"#D6D7D9",
                     spinner:"spinner2"
                 });
     		},
@@ -84,4 +71,44 @@ $(function(){
     	})
     	
     })
+    //更新系统信息
+    $("#upinfo").on('click',function(e){
+    	e.preventDefault();
+    	var title=$("#title").val().trim(),
+			signature=$("#signature").val().trim(),
+    	    webinfo=$("#webinfo").val().trim();
+    	if(title.length == 0){
+    		$.tip("请输入站点标题");
+    		return false;
+    	}   
+    	if(webinfo.length == 0){
+    		$.tip("请输入站点信息");
+    		return false;
+    	}
+    	$.ajax({
+    		url:'upinfo',
+    		type:"post",
+    		data:{title:title,signature:signature,webinfo:webinfo},
+    		beforeSend:function(){
+    			$(".fakeloader").fakeLoader({
+                    timeToHide:1200,
+                    bgColor:"#D6D7D9",
+                    spinner:"spinner3"
+                });
+    		},
+    		success:function(data){
+    			if(data.code==1){
+    				$.tip(data.msg);
+        		}else{
+        			$.tip(data.msg);
+        		}				
+    			
+    		},
+    		error:function(){
+    			$.tip('网络繁忙');
+    		}
+    	})
+    	
+    })
+
 })

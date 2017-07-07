@@ -1,0 +1,43 @@
+{extend name="layout/base"}
+{block name="style"}
+<style type="text/css">
+	.admin-form{width: 800px;margin-top: 40px;}
+	.til {margin-left: 30px;padding-bottom: 20px;}
+	.uptime{font-size: 12px;float: right;position: relative;top: 14px;}
+</style>
+{/block}
+
+{block name="body"}
+
+<div class="admin-form">
+	<div class="til">
+	    <h2>常规信息 <span class="uptime">上次更新时间：{$ret.addtime|date="Y-m-d H:i:s",###}</span></h2>
+	</div>
+	<form class="form-horizontal" role="form">
+	  <div class="form-group">
+	    <label for="firstname" class="col-sm-2 control-label">站点标题</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="title" value="{$ret.title}">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="firstname" class="col-sm-2 control-label">签名</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="signature" value="{$ret.signature}">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="lastname" class="col-sm-2 control-label">站点信息</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="webinfo" value="{$ret.web_info}">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-default" id="upinfo">保存更改</button>
+	    </div>
+	  </div>
+	</form>
+	<div class="fakeloader"></div>
+</div>
+{/block}
