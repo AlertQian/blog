@@ -91,7 +91,7 @@ $(function(){
     		data:{title:title,signature:signature,webinfo:webinfo},
     		beforeSend:function(){
     			$(".fakeloader").fakeLoader({
-                    timeToHide:1200,
+                    timeToHide:15200,
                     bgColor:"#D6D7D9",
                     spinner:"spinner3"
                 });
@@ -110,5 +110,59 @@ $(function(){
     	})
     	
     })
-
+    //添加文章
+    $("#artadd").on('click',function(e){
+    	e.preventDefault();
+    	var title = $('#name').val().trim(),
+    		content = $('#summernote').summernote('code'),
+    		isEmpty=$('#summernote').summernote('isEmpty');	
+    	if(title.length == 0){
+    		$.tip('给一个霸气的标题吧');
+    		return false;
+    	}
+    	if(isEmpty){
+    		$.tip('内容被吃了吗？');
+    		return false;
+    	}
+    	$.ajax({
+    		url:'artsave',
+    		type:"POST",
+    		data:{title:title,content:content},
+    		success:function(data){
+    			if(data.code==1){
+    				$.tip(data.msg);
+        		}else{
+        			$.tip(data.msg);
+        		}	
+    		},
+    		error:function(){
+    			$.tip('网络繁忙');
+    		}
+    	})
+    })
+    //添加新分类目录
+    $("#classadd").on('click',function(e){
+    	e.preventDefault();
+    	var name=$("#name").val().trim(),
+    	    parents=$("#parents").find("option:selected").val();
+    	if(name.length == 0){
+    		$.tip('来一个文艺气息的名称');
+    		return false;
+    	}
+    	$.ajax({
+    		url:"classadd",
+    		data:{name:name,parents:parents},
+    		type:"POST",
+    		success:function(data){
+    			if(data.code==1){
+    				$.tip(data.msg);
+        		}else{
+        			$.tip(data.msg);
+        		}	
+    		},
+    		error:function(){
+    			$.tip('网络繁忙');
+    		}
+    	})
+    })
 })
