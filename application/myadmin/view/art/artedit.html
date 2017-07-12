@@ -15,20 +15,20 @@
 
 <div class="article">
     <div>
-        <div class="divwrap"><h3>撰写新文章</h3></div>
+        <div class="divwrap"><h3>编辑文章</h3></div>
         <form role="form" id="myForm">
 	    <div class="col-md-10 col-sm-10">   
 			  <div class="form-group">
-			    <input type="text" class="form-control" id="name" placeholder="在此输入标题">
+			    <input type="text" class="form-control" id="name" value="{$ret.title}" >
 			  </div>
-			  <div id="summernote"></div>
+			  <div id="summernote">{$ret.content}</div>
 		</div>
 		<div class="col-md-2 col-sm-2">
 			<div class="panel panel-default">
 			    <div class="panel-heading">文章类型</div>
 			    <ul class="list-group radio">
-			        {volist name="ret" id="ret"}
-			        <li class="list-group-item"><label><input type="radio" name="artype" value="{$ret.id}">{$ret.item}</label></li>
+			        {volist name="list" id="vo"}
+			        <li class="list-group-item"><label><input type="radio" name="artype" value="{$vo.id}">{$vo.item}</label></li>
 			        {/volist}
 			        <li class="list-group-item"><button type="submit" class="btn btn-primary btn-block" id="artadd">提交</button></li>
 			    </ul>

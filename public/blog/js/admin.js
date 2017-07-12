@@ -156,6 +156,7 @@ $(function(){
     		success:function(data){
     			if(data.code==1){
     				$.tip(data.msg);
+    				location.href=data.url;
         		}else{
         			$.tip(data.msg);
         		}	

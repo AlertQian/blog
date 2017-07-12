@@ -5,6 +5,7 @@
 	.divwrap{padding: 15px;}
 	.glyp {top: 0px;cursor: pointer;}
 	.addart{height: 34px;line-height: 34px;}
+	.nocont{line-height: 30px;text-align: center;font-size: 16px;color: #f00}
 	thead tr th{text-align: center;}
 </style>
 {/block}
@@ -14,10 +15,14 @@
 <div class="article">
     <div class="search">
 	    <div class="col-md-5 col-sm-5">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="标题">
-				<span class="input-group-addon glyphicon glyphicon-search glyp"></span>
-			</div>
+		    <form method="post" action="{:url('art/artall')}">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="标题" value="{$Request.param.keyword}" name="keyword">
+					<span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+				</div>
+			</form>	
 		</div>
 		<div class="col-md-7 col-sm-7 addart text-right" style="float: right;">
 			<a href="{:url('article/artadd')}"><span class="glyphicon glyphicon-plus"></span> 添加文章</a>
@@ -47,7 +52,7 @@
 		      <td>{$ret.author}</td>
 		      <td>{$ret.item}</td>
 		      <td>{$ret.addtime|date="Y-m-d H:i:s",###}</td>
-		      <td><a href="">编辑</a></td>
+		      <td><a href="{:url('art/artedit',['id'=>$ret.id])}">编辑</a></td>
 		    </tr>
 		  {/volist}
 		  </tbody>
