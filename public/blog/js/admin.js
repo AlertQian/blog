@@ -140,6 +140,39 @@ $(function(){
     		}
     	})
     })
+    //保存编辑文章
+    $("#arteditsave").on('click',function(e){
+    	e.preventDefault();
+    	var title   = $('#name').val().trim(),
+    	    id      = $('#id').val(),
+    	    item    = $('input[type=radio]:checked').val(),
+    		content = $('#summernote').summernote('code'),
+    		isEmpty = $('#summernote').summernote('isEmpty');
+    		console.log(id+'//'+item);	
+    	if(title.length == 0){
+    		$.tip('给一个霸气的标题吧');
+    		return false;
+    	}
+    	if(isEmpty){
+    		$.tip('内容被吃了吗？');
+    		return false;
+    	}
+    	$.ajax({
+    		url:'/myadmin/art/arteditsave',
+    		type:"POST",
+    		data:{title:title,content:content,id:id,item:item},
+    		success:function(data){
+    			if(data.code==1){
+    				$.tip(data.msg);
+        		}else{
+        			$.tip(data.msg);
+        		}	
+    		},
+    		error:function(){
+    			$.tip('网络繁忙');
+    		}
+    	})
+    })
     //添加新分类目录
     $("#classadd").on('click',function(e){
     	e.preventDefault();

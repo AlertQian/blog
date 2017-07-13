@@ -76,6 +76,11 @@ class Art extends Basic
     //编辑保存文章
     public function arteditsave(){
        $data   =input(); 
+       $id     =$data['id'];
+       $item   =$data['item'];
+       if(!ctype_digit($id) || !ctype_digit($item)){
+        return $this->error('参数错误');
+       }
        $title  =strip_tags($data['title']);
        $content=$data['content'];
        $author =session('username');
@@ -84,9 +89,10 @@ class Art extends Basic
           'title'  =>$title,
           'content'=>$content,
           'author' =>$author,
+          'item'   =>$item,
           'addtime'=>time()
        ];
-       $ret=$article->save($savedata);
+       $ret=$article->save($savedata,['id'=>$id]);
        if($ret){
           $this->success('提交成功');
        }else{

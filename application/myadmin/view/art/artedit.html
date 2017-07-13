@@ -20,6 +20,7 @@
 	    <div class="col-md-10 col-sm-10">   
 			  <div class="form-group">
 			    <input type="text" class="form-control" id="name" value="{$ret.title}" >
+			    <input type="hidden" class="form-control" id="id" value="{$ret.id}" >
 			  </div>
 			  <div id="summernote">{$ret.content}</div>
 		</div>
@@ -30,7 +31,7 @@
 			        {volist name="list" id="vo"}
 			        <li class="list-group-item"><label><input type="radio" name="artype" value="{$vo.id}">{$vo.item}</label></li>
 			        {/volist}
-			        <li class="list-group-item"><button type="submit" class="btn btn-primary btn-block" id="artadd">提交</button></li>
+			        <li class="list-group-item"><button type="submit" class="btn btn-primary btn-block" id="arteditsave">提交</button></li>
 			    </ul>
 			</div>
 		</div>
