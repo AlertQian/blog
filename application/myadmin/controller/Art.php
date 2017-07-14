@@ -38,6 +38,24 @@ class Art extends Basic
        $this->assign('ret',$ret);
        return $this->fetch();
     }
+    //删除文章
+    public function delart(){
+      $strarr=input('strarr');
+      if(empty($strarr)){
+        return $this->error('参数错误');
+      }
+      $arr=explode(',', $strarr);
+      $article=new Article;
+      foreach ($arr as $value) {
+        $where['id']=$value;
+        $ret=$article->destroy($where);
+      }
+      if($ret){
+          $this->success('删除成功');
+       }else{
+          $this->error('删除失败');
+       }
+    }
     //编辑文章
     public function artedit()
     {  
@@ -90,7 +108,7 @@ class Art extends Basic
           'content'=>$content,
           'author' =>$author,
           'item'   =>$item,
-          'addtime'=>time()
+          'uptime'=>time()
        ];
        $ret=$article->save($savedata,['id'=>$id]);
        if($ret){
@@ -170,4 +188,22 @@ class Art extends Basic
         $this->error('提交失败');
       }
     } 
+    //删除文章
+    public function delitem(){
+      $strarr=input('strarr');
+      if(empty($strarr)){
+        return $this->error('参数错误');
+      }
+      $arr=explode(',', $strarr);
+      $class=new ClassItem;
+      foreach ($arr as $value) {
+        $where['id']=$value;
+        $ret=$class->destroy($where);
+      }
+      if($ret){
+          $this->success('删除成功');
+       }else{
+          $this->error('删除失败');
+       }
+    }
 }

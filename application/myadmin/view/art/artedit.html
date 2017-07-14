@@ -29,7 +29,7 @@
 			    <div class="panel-heading">文章类型</div>
 			    <ul class="list-group radio">
 			        {volist name="list" id="vo"}
-			        <li class="list-group-item"><label><input type="radio" name="artype" value="{$vo.id}">{$vo.item}</label></li>
+			        <li class="list-group-item"><label><input type="radio" name="artype" value="{$vo.id}" {eq name="$vo.id" value="$ret.item"} checked="checked" {/eq}>{$vo.item}</label></li>
 			        {/volist}
 			        <li class="list-group-item"><button type="submit" class="btn btn-primary btn-block" id="arteditsave">提交</button></li>
 			    </ul>

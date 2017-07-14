@@ -199,4 +199,77 @@ $(function(){
     		}
     	})
     })
+    //全选、反选
+    $("#selted").on('click',function(){
+    	$('.conts :checkbox').each(function(){
+    		$(this).prop('checked',!$(this).prop('checked'));
+    	})
+
+    })
+    //删除所选文章
+    $("#delart").on('click',function(e){
+    	e.preventDefault();
+    	var arr=new Array;
+    	$(".conts :checkbox:checked").each(function(i){
+    		arr[i]=$(this).val();  		
+    	})
+    	var strarr=arr.join(',');
+    	console.log(strarr);
+    	if(strarr == ""){
+    		$.tip("请选择要删除的选项！");
+    		return false;
+    	}
+    	if(!confirm('确定要删除选项吗？')){
+    		return false;
+    	}
+    	$.ajax({
+    		url:"delart",
+    		type:"POST",
+    		data:{strarr:strarr},
+    		success:function(data){
+    			if(data.code==1){
+    				$.tip(data.msg);
+    				$(".conts :checkbox:checked").parents("tr").remove();
+        		}else{
+        			$.tip(data.msg);
+        		}	
+    		},
+    		error:function(){
+    			$.tip('网络繁忙');
+    		}
+    	})
+    })
+    //删除分类
+    $("#delitem").on('click',function(e){
+    	e.preventDefault();
+    	var arr=new Array;
+    	$(".conts :checkbox:checked").each(function(i){
+    		arr[i]=$(this).val();  		
+    	})
+    	var strarr=arr.join(',');
+    	console.log(strarr);
+    	if(strarr == ""){
+    		$.tip("请选择要删除的选项！");
+    		return false;
+    	}
+    	if(!confirm('确定要删除选项吗？')){
+    		return false;
+    	}
+    	$.ajax({
+    		url:"delitem",
+    		type:"POST",
+    		data:{strarr:strarr},
+    		success:function(data){
+    			if(data.code==1){
+    				$.tip(data.msg);
+    				$(".conts :checkbox:checked").parents("tr").remove();
+        		}else{
+        			$.tip(data.msg);
+        		}	
+    		},
+    		error:function(){
+    			$.tip('网络繁忙');
+    		}
+    	})
+    })
 })

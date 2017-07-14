@@ -25,7 +25,7 @@
 			</form>	
 		</div>
 		<div class="col-md-7 col-sm-7 addart text-right" style="float: right;">
-			<a href="{:url('article/artadd')}"><span class="glyphicon glyphicon-plus"></span> 添加文章</a>
+			<a href="{:url('art/artadd')}"><span class="glyphicon glyphicon-plus"></span> 添加文章</a>
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -44,10 +44,10 @@
 		      <th>操作</th>
 		    </tr>
 		  </thead>
-		  <tbody>
+		  <tbody class="conts">
 		  {volist name="ret" id="ret"}
 		    <tr>
-		      <td><label><input type="checkbox"></label></td>
+		      <td><label style="width: 100%;"><input type="checkbox" value="{$ret.id}" name="id"></label></td>
 		      <td class="text-left"><a href="">{$ret.title}</a></td>
 		      <td>{$ret.author}</td>
 		      <td>{$ret.item}</td>
@@ -57,6 +57,10 @@
 		  {/volist}
 		  </tbody>
 		</table>
+		<div class="select">
+			<button class="btn btn-default" id="selted">全选/反选</button>
+			<button class="btn btn-default" id="delart">删除所选</button>
+		</div>
 		<div class="page">
 			{$page}
 		</div>

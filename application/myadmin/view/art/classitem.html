@@ -57,10 +57,10 @@
 				      <th>日期</th>
 				    </tr>
 				  </thead>
-				  <tbody>
+				  <tbody class="conts">
 				    {volist name="ret" id="ret"}
 				    <tr>
-				      <td><label style="width: 100%;"><input type="checkbox"></label></td>
+				      <td><label style="width: 100%;"><input type="checkbox" value="{$ret.id}"></label></td>
 				      <td><a href="">{$ret.item}</a></td>
 				      <td>{$ret.bm}</td>
 				      <td>{$ret.addtime|date="Y-m-d H:i:s",###}</td>
@@ -68,10 +68,14 @@
 				    {/volist}
 				  </tbody>
 				</table>
-		        {else/}
-		        <div>暂无分类</div> 
-		        {/if}
 			</div>
+			<div class="select">
+				<button class="btn btn-primary" id="selted">全选/反选</button>
+				<button class="btn btn-primary" id="delitem">删除所选</button>
+			</div>
+	        {else/}
+	        <div>暂无分类</div> 
+	        {/if}
 		</div>
 		<div class="clearfix"></div>
 	</div>
