@@ -113,9 +113,10 @@ $(function(){
     //添加文章
     $("#artadd").on('click',function(e){
     	e.preventDefault();
-    	var title = $('#name').val().trim(),
+    	var title   = $('#name').val().trim(),
     		content = $('#summernote').summernote('code'),
-    		isEmpty=$('#summernote').summernote('isEmpty');	
+    		$this   = $(this),
+    		isEmpty = $('#summernote').summernote('isEmpty');	
     	if(title.length == 0){
     		$.tip('给一个霸气的标题吧');
     		return false;
@@ -128,9 +129,11 @@ $(function(){
     		url:'artsave',
     		type:"POST",
     		data:{title:title,content:content},
+    		beforeSend:function(){$this.prop('disabled',true)},
     		success:function(data){
     			if(data.code==1){
     				$.tip(data.msg);
+    				location.href="/myadmin/art/artall";
         		}else{
         			$.tip(data.msg);
         		}	

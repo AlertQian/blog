@@ -1,0 +1,105 @@
+<div class="col-md-4 visible-lg visible-md sidebar">
+    <header class="header"> 
+		<h2><a href="./index.html">{$ret.title}</a></h2>
+		<cite>{$ret.signature}</cite>
+		<div class="items">
+    	    <p>访问：{$ret.visitors_num}次</p>
+    	    <p>文章：{$count}篇</p>
+	    </div>
+	</header>
+	<div class="input-group">
+		<input type="text" class="form-control">
+		<span class="input-group-addon glyphicon glyphicon-search glyp"></span>
+	</div> 
+	<br>
+	{if condition="isset($artlist)"}
+	<div class="panel-group"> 
+		<div class="panel panel-default">
+			<div class="panel-heading" data-toggle="collapse" data-target="#new-art">
+				<h4 class="panel-title">最近文章</h4>
+			</div>
+			<div id="new-art" class="panel-collapse collapse in">
+			    <div class="list-group">
+			        {volist name="artlist" id="vo"}
+			    	<a href="{:url('index/detail',['id'=>$vo.id])}" class="list-group-item">{$vo.title}<span class="badge badge-info">442</span></a>
+			        {/volist}
+			    </div>
+			</div>
+		</div> 
+	</div>
+	{/if}
+	{if condition="isset($itemlist)"}
+	<div class="panel-group">
+	    <div class="panel panel-default">
+			<div class="panel-heading" data-toggle="collapse" data-target="#art-categories">
+				<h4 class="panel-title">文章分类</h4>
+			</div>
+			<div id="art-categories" class="panel-collapse collapse in">
+			    <div class="list-group">
+			        {volist name="itemlist" id="vo"}
+			    		<a href="#" class="list-group-item">{$vo.item}
+			    		{if condition="$vo.num > 0"}
+			    		<span class="badge badge-info">{$vo.num}</span>
+			    		{/if}
+			    		</a>
+			    	{/volist}
+			    </div>
+			</div>
+		</div>
+	</div>	
+	{/if}
+</div>
+<div class="col-md-4 visible-xs visible-sm sidebar">
+	<header class="header"> 
+		<h2>{$ret.title}</h2>
+		<cite>{$ret.signature}</cite>
+        <button type="button" class="btn btn-default navs" data-toggle="collapse" data-target="#nav-categories"><span class="glyphicon glyphicon-th-list" style="font-size:15px;"></span></button>
+		<div class="items">
+    	    <p>访问：{$ret.visitors_num}次</p>
+    	    <p>文章：{$count}篇</p>
+	    </div>
+	</header>
+    <div class="collapse" id="nav-categories">
+    	<div class="input-group">
+			<input type="text" class="form-control">
+			<span class="input-group-addon glyphicon glyphicon-search glyp"></span>
+		</div> 
+		<br>
+		{if condition="isset($artlist)"}
+		<div class="panel-group"> 
+			<div class="panel panel-default">
+				<div class="panel-heading" data-toggle="collapse" data-target="#new-art">
+					<h4 class="panel-title">最近文章</h4>
+				</div>
+				<div id="new-art" class="panel-collapse collapse in">
+				    <div class="list-group">
+				        {volist name="artlist" id="vo"}
+				    	<a href="{:url('index/detail',['id'=>$vo.id])}" class="list-group-item">{$vo.title}<span class="badge badge-info">442</span></a>
+				        {/volist}
+				    </div>
+				</div>
+			</div> 
+		</div>
+		{/if}
+		{if condition="isset($itemlist)"}
+		<div class="panel-group">
+		    <div class="panel panel-default">
+				<div class="panel-heading" data-toggle="collapse" data-target="#art-categories">
+					<h4 class="panel-title">文章分类</h4>
+				</div>
+				<div id="art-categories" class="panel-collapse collapse in">
+				    <div class="list-group">
+				        {volist name="itemlist" id="vo"}
+				    		<a href="#" class="list-group-item">{$vo.item}
+				    		{if condition="$vo.num > 0"}
+				    		<span class="badge badge-info">{$vo.num}</span>
+				    		{/if}
+				    		</a>
+				    	{/volist}
+				    </div>
+				</div>
+			</div>
+		</div>	
+		{/if}
+	</div>	
+</div>

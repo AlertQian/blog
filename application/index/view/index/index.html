@@ -1,190 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>blog-风雨兼程</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="钱程的博客" />
-    <meta name="keywords" content="钱程的博客" />
-    <meta name="author" content="钱程"/>
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
-	<style type="text/css">
-	    *{margin: 0px;padding: 0px;}
-        body{background: #F1F1F1;}
-
-	    .main{width: 1024px;margin: 0px auto;}
-	    .sidebar{border: 1px solid #ccc;background: #fff}
-	    .content{border: 1px solid #ccc;background: #fff;padding-top: 30px;}
-	    .header{padding: 30px 15px;}
-	    .header a{color: inherit;}
-	    .header a:hover{text-decoration: none;}
-	    .glyp{top: 0px;cursor: pointer;}
-	    .items{padding-top: 15px;}
-	    .artlist{border-bottom: 1px dashed #ddd;}
-	    .artlist:last-child{border-bottom:none;}
-	    .page{text-align: center;}
-	    .navs{position: relative;top: -42px;float: right;right: -15px;}
-
-	    .footer{padding:10px 0px;background: #fff;margin-top: 20px;border: 1px solid #ccc;}
-	    .info{padding: 5px 15px;line-height: 25px;text-align: center;}
-	</style>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-		    <div class="col-md-4 visible-lg visible-md sidebar">
-	    	    <header class="header"> 
-		    		<h2><a href="./index.html">AlertQian的博客</a></h2>
-		    		<cite>海到无边天作岸，山高绝顶人为峰</cite>
-		    		<div class="items">
-			    	    <p>访问：1530次</p>
-			    	    <p>文章：25篇</p>
-		    	    </div>
-	    		</header>
-				<div class="input-group">
-					<input type="text" class="form-control">
-					<span class="input-group-addon glyphicon glyphicon-search glyp"></span>
-				</div> 
-				<br>
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-heading" data-toggle="collapse" data-target="#new-art">
-							<h4 class="panel-title">最近文章</h4>
-						</div>
-						<div id="new-art" class="panel-collapse collapse in">
-						    <div class="list-group">
-						    	<a href="#" class="list-group-item">关于微信导航栏动态改变tabbar问题<span class="badge badge-info">442</span></a>
-						    	<a href="#" class="list-group-item">怎样学好python</a>
-						    	<a href="#" class="list-group-item">bootstrap富文本编辑器的整合</a>
-						    </div>
-						</div>
-					</div> 
-				</div>
-				<div class="panel-group">
-				    <div class="panel panel-default">
-						<div class="panel-heading" data-toggle="collapse" data-target="#art-categories">
-							<h4 class="panel-title">文章分类</h4>
-						</div>
-						<div id="art-categories" class="panel-collapse collapse in">
-						    <div class="list-group">
-						    	<a href="#" class="list-group-item">技术<span class="badge badge-info">10</span></a>
-						    	<a href="#" class="list-group-item">杂文</a>
-						    	<a href="#" class="list-group-item">其他</a>
-						    </div>
-						</div>
-					</div>
-				</div>	
-		    </div>
-		    <div class="col-md-4 visible-xs visible-sm sidebar">
-		    	<header class="header"> 
-		    		<h2>AlertQian的博客</h2>
-		    		<cite>海到无边天作岸，山高绝顶人为峰</cite>
-                    <button type="button" class="btn btn-default navs" data-toggle="collapse" data-target="#nav-categories"><span class="glyphicon glyphicon-th-list" style="font-size:15px;"></span></button>
-		    		<div class="items">
-			    	    <p>访问：1530次</p>
-			    	    <p>文章：25篇</p>
-		    	    </div>
-	    		</header>
-			    <div class="collapse" id="nav-categories">
-			    	<div class="input-group">
-						<input type="text" class="form-control">
-						<span class="input-group-addon glyphicon glyphicon-search glyp"></span>
-					</div> 
-					<br>
-					<div class="panel-group">
-						<div class="panel panel-default">
-							<div class="panel-heading" data-toggle="collapse" data-target="#new-art">
-								<h4 class="panel-title">最近文章</h4>
-							</div>
-							<div id="new-art" class="panel-collapse collapse in">
-							    <div class="list-group">
-							    	<a href="#" class="list-group-item">关于微信导航栏动态改变tabbar问题<span class="badge badge-info">442</span></a>
-							    	<a href="#" class="list-group-item">怎样学好python</a>
-							    	<a href="#" class="list-group-item">bootstrap富文本编辑器的整合</a>
-							    </div>
-							</div>
-						</div> 
-					</div>
-					<div class="panel-group">
-					    <div class="panel panel-default">
-							<div class="panel-heading" data-toggle="collapse" data-target="#art-categories">
-								<h4 class="panel-title">文章分类</h4>
-							</div>
-							<div id="art-categories" class="panel-collapse collapse in">
-							    <div class="list-group">
-							    	<a href="#" class="list-group-item">技术<span class="badge badge-info">10</span></a>
-							    	<a href="#" class="list-group-item">杂文</a>
-							    	<a href="#" class="list-group-item">其他</a>
-							    </div>
-							</div>
-						</div>
-					</div>
-				</div>	
-		    </div>
-		    <div class="col-md-8 content">
-		      <div class="artlist"> 
-	    		<h2>Heading</h2>
-		         <p>
-		            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		         </p>
-		         <p>
-		             <a class="btn" href="./detail.html">View details »</a>
-		         </p>
-		      </div>
-		      <div class="artlist"> 
-	    		<h2>Heading</h2>
-		         <p>
-		            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		         </p>
-		         <p>
-		             <a class="btn" href="#">View details »</a>
-		         </p>
-		      </div>
-		      <div class="artlist"> 
-	    		<h2>Heading</h2>
-		         <p>
-		            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		         </p>
-		         <p>
-		             <a class="btn" href="#">View details »</a>
-		         </p>
-		      </div>
-		      <div class="artlist"> 
-	    		<h2>Heading</h2>
-		         <p>
-		            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		         </p>
-		         <p>
-		             <a class="btn" href="#">View details »</a>
-		         </p>
-		      </div>
-		      <div class="artlist"> 
-	    		<h2>Heading</h2>
-		         <p>
-		            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-		         </p>
-		         <p>
-		             <a class="btn" href="#">View details »</a>
-		         </p>
-		      </div>
-		      <div class="page">
-		      	<ul class="pagination">
-				    <li><a href="#">&laquo;</a></li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li><a href="#">&raquo;</a></li>
-				</ul>
-		      </div>
-		    </div>
-	    </div>
-    </div>
-	<div class="container footer">
-		<div class="info">copyright © 2017　　<em>This is my first site built by myself</em>　　<strong>Code By</strong>　AlertQian</span></div>
+{extend name="layout/layout"}
+{block name="style"}
+{/block}
+{block name="body"}
+    {include file="index/left" /} 
+    <div class="col-md-8 content">
+          {if condition="isset($artlist)"}
+          {volist name="artlist" id="vo"}
+	      <div class="artlist"> 
+    		<h2>{$vo.title}</h2>
+	         <p>
+	           {$vo.content}
+	         </p>
+	         <p>
+	            <a class="btn" href="{:url('index/detail',['id'=>$vo.id])}">View details »</a>
+	         </p>
+	      </div>
+	      {/volist}
+	      <div class="page">
+	      	{$page}
+	      </div>
+	      {else/}
+	      <div class="">没有文章</div>
+	      {/if}
 	</div>
-</body>
-</html>
+{/block}

@@ -1,0 +1,20 @@
+*{margin: 0px;padding: 0px;}
+body{background: #F1F1F1;}
+
+.main{width: 1024px;margin: 0px auto;}
+.sidebar{border: 1px solid #ccc;background: #fff}
+.content{border: 1px solid #ccc;background: #fff;padding-top: 30px;}
+.header{padding: 30px 15px;}
+.header a{color: inherit;}
+.header a:hover{text-decoration: none;}
+.glyp{top: 0px;cursor: pointer;}
+.items{padding-top: 15px;}
+.artlist{border-bottom: 1px dashed #ddd;}
+.artlist:last-child{border-bottom:none;}
+.page{text-align: center;}
+.navs{position: relative;top: -42px;float: right;right: -15px;}
+
+.footer{padding:10px 0px;background: #fff;margin-top: 20px;border: 1px solid #ccc;}
+.info{padding: 5px 15px;line-height: 25px;text-align: center;}
+/*文章页脚*/
+.art-info{padding: 20px 0px;font-size: 12px;}

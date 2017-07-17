@@ -1,0 +1,25 @@
+{extend name="layout/base"}
+{block name="style"}
+
+{/block}
+{block name="script"}
+<script type="text/javascript">
+    function shap(){
+    	setInterval(function(){$(".uptime").fadeOut(500).fadeIn(500);},500);
+    } 
+    $(function(){
+    	//shap();
+    })
+</script>
+{/block}
+{block name="body"}
+<body onload="shap()">
+<div class="admin-form">
+	<div class="til">
+	    <h2>常规信息 <span class="uptime">上次更新时间</span></h2>
+	</div>
+	
+	<div class="fakeloader"></div>
+</div>
+</body>
+{/block}

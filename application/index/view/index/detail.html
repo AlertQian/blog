@@ -1,0 +1,19 @@
+{extend name="layout/layout"}
+{block name="style"}
+{/block}
+{block name="body"}
+
+    <div class="col-md-8 content">
+      <div class="artlist"> 
+		<h2>{$detail.title}</h2>
+         <p>
+            {$detail.content}
+         </p>
+         <div class="art-info">
+            <span class="glyphicon glyphicon-calendar"></span> {$detail.addtime|date="Y-m-d H:i:s",###}  
+            <span style="margin-left: 20px"><span class="glyphicon glyphicon-zoom-in"></span> {$detail.view_num}人阅读</span>
+            <span style="margin-left: 20px"><span class="glyphicon glyphicon-edit"></span> 评论(0)</span>
+         </div>
+      </div>
+    </div>
+{/block}
