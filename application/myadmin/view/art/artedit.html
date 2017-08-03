@@ -63,13 +63,13 @@
 		    $.ajax({  
 		        data : data,  
 		        type : "POST",  
-		        url : "uploadPic", //图片上传出来的url，返回的是图片上传后的路径，http格式  
+		        url : "/myadmin/art/uploadPic", //图片上传出来的url，返回的是图片上传后的路径，http格式  
 		        cache : false,  
 		        contentType : false,
 		        processData : false,
 		        success: function(data){
 		            $('#summernote').summernote('insertImage', data, function ($image) {
-                        $image.attr({src: data,class:"artimg"});
+                        $image.attr({'data-original': data,class:"artimg"});
                     });
 		        },  
 		        error:function(){  

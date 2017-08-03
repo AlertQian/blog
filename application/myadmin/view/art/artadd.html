@@ -68,7 +68,7 @@
 		        processData : false,
 		        success: function(data){
 		            $('#summernote').summernote('insertImage', data, function ($image) {
-                        $image.attr({src: data,class:"artimg"});
+                        $image.attr({'data-original': data,class:"artimg"});
                     });
 		        },  
 		        error:function(){  

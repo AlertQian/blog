@@ -2,7 +2,7 @@
 {block name="style"}
 {/block}
 {block name="body"}
-
+    {include file="index/left"}
     <div class="col-md-8 content">
       <div class="artlist"> 
 		<h2>{$detail.title}</h2>
@@ -16,4 +16,7 @@
          </div>
       </div>
     </div>
+    <script type="text/javascript">
+        $("img.artimg").lazyload({effect: "fadeIn",threshold:-100});
+    </script>
 {/block}

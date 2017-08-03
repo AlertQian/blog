@@ -26,7 +26,7 @@ $(function(){
         			setTimeout(function(){
                         $this.text('登录成功');
         				location.href="/myadmin/index/index";
-        			},1500)
+        			},500)
         			
         		}else{
         			$.tip(data.msg);

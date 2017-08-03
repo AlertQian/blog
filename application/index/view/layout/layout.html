@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>blog-风雨兼程</title>
+	<title>{$title|default="风雨兼程"} - 钱磊的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="钱程的博客" />
-    <meta name="keywords" content="钱程的博客" />
-    <meta name="author" content="钱程"/>
+	<meta name="description" content="钱磊的博客" />
+    <meta name="keywords" content="钱磊的博客" />
+    <meta name="author" content="钱磊"/>
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/blog/css/index.css">
     {block name="style"}{/block}
     <script type="text/javascript" src="/bootstrap/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/blog/js/jquery.lazyload.min.js"></script>
 	{block name="script"}{/block}
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            {block name="body"}{/block}
+    <div class="head visible-lg visible-md"></div>
+    <div class="bodyer">
+	    <div class="container">
+	        <div class="row">
+	            {block name="body"}{/block}
+		    </div>  
 	    </div>
+	    {include file="layout/footer" /}
     </div>
-    {include file="layout/footer" /}
 </body>
 </html>

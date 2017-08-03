@@ -20,7 +20,11 @@
 	      	{$page}
 	      </div>
 	      {else/}
-	      <div class="">没有文章</div>
+	      <h2 class="text-center">没有相关文章</h2>
 	      {/if}
 	</div>
+	<div class="clearfix"></div>
+	<script type="text/javascript">
+		$("img.artimg").lazyload({effect: "fadeIn",threshold:-100});
+	</script>
 {/block}

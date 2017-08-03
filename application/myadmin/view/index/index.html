@@ -11,9 +11,9 @@
                 </div>
                 <div id="webset" class="panel-collapse collapse in">
                     <div class="group-list">
-                        <a href="{:url('webset/administartor')}" class="list-item" target="right"><span class="glyphicon glyphicon-user pad-right"></span>管理员　</a>
-                        <a href="{:url('webset/systeminfo')}" class="list-item" target="right"><span class="glyphicon glyphicon-info-sign pad-right"></span>系统信息</a>
-                        <a href="{:url('webset/loglist')}" class="list-item" target="right"><span class="glyphicon glyphicon-list-alt pad-right"></span>日志记录</a>
+                        <a href="{:url('webset/administartor')}" target="right"><span class="glyphicon glyphicon-user pad-right"></span>管理员　</a>
+                        <a href="{:url('webset/systeminfo')}" target="right"><span class="glyphicon glyphicon-info-sign pad-right"></span>系统信息</a>
+                        <a href="{:url('webset/loglist')}" target="right"><span class="glyphicon glyphicon-list-alt pad-right"></span>日志记录</a>
                     </div>
                 </div>
             </div> 
@@ -25,9 +25,9 @@
                 </div>
                 <div id="article" class="panel-collapse collapse in">
                     <div class="group-list">
-                        <a href="{:url('art/artall')}" class="list-item" target="right"><span class="glyphicon glyphicon-file pad-right"></span>所有文章</a>
-                        <a href="{:url('art/artadd')}" class="list-item" target="right"><span class="glyphicon glyphicon-pencil pad-right"></span>添加文章</a>
-                        <a href="{:url('art/classitem')}" class="list-item" target="right"><span class="glyphicon glyphicon-tags pad-right"></span>分类目录</a>
+                        <a href="{:url('art/artall')}" target="right"><span class="glyphicon glyphicon-file pad-right"></span>所有文章</a>
+                        <a href="{:url('art/artadd')}" target="right"><span class="glyphicon glyphicon-pencil pad-right"></span>添加文章</a>
+                        <a href="{:url('art/classitem')}" target="right"><span class="glyphicon glyphicon-tags pad-right"></span>分类目录</a>
                     </div>
                 </div>
             </div> 
@@ -40,7 +40,7 @@
         <div class="adminmenuback"></div>
     </div>
     <div class="wrap">
-        <iframe id="rightag" name="right" src="" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+        <iframe id="rightag" name="right" src="{:url('art/artall')}" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
     </div>
     <div class="clearfix"></div>
 </div>
