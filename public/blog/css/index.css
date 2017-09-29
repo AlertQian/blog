@@ -5,7 +5,7 @@ body{background: #F1F1F1;}
 .bodyer{overflow: hidden;}
 .main{width: 1024px;margin: 0px auto;}
 .sidebar{border: 1px solid #ccc;background: #fff}
-.content{border: 1px solid #ccc;background: #fff;padding-top: 30px;}
+.content{border: 1px solid #ccc;background: #fff;padding-top: 30px;font-size: 16px;}
 .header{padding: 30px 15px;}
 .header a{color: inherit;}
 .header a:hover{text-decoration: none;}
@@ -22,3 +22,5 @@ body{background: #F1F1F1;}
 /*文章页脚*/
 .art-info{padding: 20px 0px;font-size: 12px;}
 .artimg{width: 100%;}
+
+.word-break{word-break: break-all;word-wrap: break-word;}

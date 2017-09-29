@@ -18,9 +18,18 @@ class Art extends Basic
          $where="title like '%$keyword%'";
        }
        $article=new Article;	
-       $ret=$article::order('addtime desc')->where($where)->paginate('10',false,['query' => $param]);
-      
+       $ret=$article->order('addtime desc')->where($where)->paginate(10,false,['query' => $param]);
        if($ret->count()){
+        foreach ($ret as $key => $value) {
+          $item=$value['item'];
+          $class=new ClassItem;
+          if($item){
+            $items=$class::where('id',$item)->value('item');
+          }else{
+            $items="";
+          }
+          $ret[$key]['items']=$items;
+        }
         $count=$article->where($where)->count();
         $page=$ret->render();
         $this->assign('ret',$ret);
@@ -77,11 +86,16 @@ class Art extends Basic
        $title  =strip_tags($data['title']);
        $content=$data['content'];
        $author =session('username');
+       $item   =$data['item'];
+       if(!ctype_digit($item)){
+        return $this->error('参数错误');
+       }
        $article=new Article;
        $savedata=[
           'title'  =>$title,
           'content'=>$content,
           'author' =>$author,
+          'item'   =>$item,
           'addtime'=>time()
        ];
        $ret=$article->save($savedata);

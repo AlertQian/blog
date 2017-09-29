@@ -7,7 +7,7 @@
           {if condition="isset($artlist)"}
           {volist name="artlist" id="vo"}
 	      <div class="artlist"> 
-    		<h2>{$vo.title}</h2>
+    		<a href="{:url('index/detail',['id'=>$vo.id])}" style="color: inherit;text-decoration: none;"><h2 class="word-break">{$vo.title}</h2></a>
 	         <p>
 	           {$vo.content}
 	         </p>

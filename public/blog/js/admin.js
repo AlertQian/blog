@@ -91,7 +91,7 @@ $(function(){
     		data:{title:title,signature:signature,webinfo:webinfo},
     		beforeSend:function(){
     			$(".fakeloader").fakeLoader({
-                    timeToHide:15200,
+                    timeToHide:1200,
                     bgColor:"#D6D7D9",
                     spinner:"spinner3"
                 });
@@ -99,6 +99,7 @@ $(function(){
     		success:function(data){
     			if(data.code==1){
     				$.tip(data.msg);
+                    location.href=data.url;
         		}else{
         			$.tip(data.msg);
         		}				
@@ -115,6 +116,7 @@ $(function(){
     	e.preventDefault();
     	var title   = $('#name').val().trim(),
     		content = $('#summernote').summernote('code'),
+            item    = $('input[type=radio]:checked').val(),
     		$this   = $(this),
     		isEmpty = $('#summernote').summernote('isEmpty');	
     	if(title.length == 0){
@@ -128,7 +130,7 @@ $(function(){
     	$.ajax({
     		url:'artsave',
     		type:"POST",
-    		data:{title:title,content:content},
+    		data:{title:title,content:content,item:item},
     		beforeSend:function(){$this.prop('disabled',true)},
     		success:function(data){
     			if(data.code==1){
